@@ -60,6 +60,8 @@ MOCKABLE_FUNCTION(, void, mqtt_client_dowork, MQTT_CLIENT_HANDLE, handle);
 
 MOCKABLE_FUNCTION(, void, mqtt_client_set_trace, MQTT_CLIENT_HANDLE, handle, bool, traceOn, bool, rawBytesOn);
 
+MOCKABLE_FUNCTION(, const char*, mqtt_client_connack_codes, CONNECT_RETURN_CODE, rtn_code);
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus

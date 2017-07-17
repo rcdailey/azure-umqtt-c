@@ -1177,3 +1177,25 @@ void mqtt_client_set_trace(MQTT_CLIENT_HANDLE handle, bool traceOn, bool rawByte
         mqtt_client->rawBytesTrace = rawBytesOn;
     }
 }
+
+const char* mqtt_client_connack_codes(CONNECT_RETURN_CODE rtn_code)
+{
+    switch (rtn_code)
+    {
+        case CONNECTION_ACCEPTED:
+            return "Accepted";
+        case CONN_REFUSED_UNACCEPTABLE_VERSION:
+            return "Unacceptable Version";
+        case CONN_REFUSED_ID_REJECTED:
+            return "Id Rejected";
+        case CONN_REFUSED_SERVER_UNAVAIL:
+            return "Server Unavailable";
+        case CONN_REFUSED_BAD_USERNAME_PASSWORD:
+            return "Bad Username/Password";
+        case CONN_REFUSED_NOT_AUTHORIZED:
+            return "Not Authorized";
+        case CONN_REFUSED_UNKNOWN:
+        default:
+            return "Unknown";
+    }
+}
